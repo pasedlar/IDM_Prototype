@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="IDM_Prototype" transaction-type="RESOURCE_LOCAL">
+		<description>HANA IDM Prototype </description>
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jar-file>ngdbc.jar</jar-file>
+		<class>com.ach_services.eclipselink.entity.User_table</class>
+		<class>com.ach_services.eclipselink.entity.Aesip_application</class>
+		<class>com.ach_services.eclipselink.entity.User_access</class>
 		<properties>
 			<property name="eclipselink.target-server" value="None"/>
+	        <property name="eclipselink.logging.level" value="FINE"/>
+	         <property name="javax.persistence.jdbc.url" value="jdbc:sap://hxehost:39015/?autocommit=false"/>
+	         <property name="javax.persistence.jdbc.user" value="IDM_ACE_DEVELOPER"/>
+	         <property name="javax.persistence.jdbc.password" value="Gmc12084592715!!"/>
+	         <property name="javax.persistence.jdbc.driver" value="com.sap.db.jdbc.Driver"/>
+	         <property name="eclipselink.ddl-generation" value="create-tables"/>
+	        <property name="eclipselink.ddl-generation" value="create-tables"/>			
 		</properties>
 	</persistence-unit>
 </persistence>
